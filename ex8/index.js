@@ -1,20 +1,23 @@
-const prompt = require("prompt-sync")({ sigint: true});
+import promptSync from 'prompt-sync';
+const prompt = promptSync();
 
-const numbersToAscending = []
-let input;
+export function sortValues() {
+    const numbersToAscending = []
+    let input;
 
-while( input !== 0) {
-    console.log("Insert an integer number (use 0 to stop de loop):");
-    input = Number(prompt(">"));
+    while( input !== 0) {
+        console.log("Insert an integer number (use 0 to stop de loop):");
+        input = parseInt(prompt(">"));
 
-    if (input !== 0) {
-        numbersToAscending.push(input);
+        if (input !== 0) {
+            numbersToAscending.push(input);
+        }
     }
-}
 
-function sortNumbers() {
-   const numbersInOrder = numbersToAscending.sort((a, b) => a - b);
-   console.log(numbersInOrder);
-}
+    function sort() {
+    const numbersInOrder = numbersToAscending.sort((a, b) => a - b);
+    console.log(numbersInOrder);
+    }
 
-sortNumbers();
+    sort();
+}

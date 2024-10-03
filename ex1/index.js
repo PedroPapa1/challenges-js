@@ -1,7 +1,10 @@
-const prompt = require("prompt-sync")({ sigint: true});
+import promptSync from 'prompt-sync';
+const prompt = promptSync();
 
-console.log("Insert degrees Celsius");
-const degreesCelsius = Number(prompt(">"));
-const degreesInFahrenheit = (degreesCelsius * 9 / 5) + 32;
+export function convertDegrees () {
+    console.log("Insert degrees Celsius");
+    const degreesCelsius = parseInt(prompt(">"));
+    const degreesInFahrenheit = (degreesCelsius * 9 / 5) + 32;
 
-console.log(`In Fahrenheit will be ${degreesInFahrenheit} degrees`);
+    console.log(`In Fahrenheit will be ${degreesInFahrenheit} degrees`);
+}
